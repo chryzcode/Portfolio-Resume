@@ -1,0 +1,1 @@
+web: gunicorn my_resume_project.wsgi --log-file -
