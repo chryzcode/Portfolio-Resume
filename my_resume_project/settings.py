@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-jenl02pv6nk$oaj^(0%v3v_7e(3^^kg2*s9pqbyiw+c9g2)l5=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['chryz-codez-resume.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -75,10 +76,22 @@ WSGI_APPLICATION = 'my_resume_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd6do4qo1tg5j15',
+        'USER': 'skvhlusigkvzax',
+        'PASSWORD': '4f008981f42ff2ac048581e45ffa5039ca1a20d22c7fe87071b628424d6f1d61',
+        'HOST': 'ec2-52-203-74-38.compute-1.amazonaws.com',
+        'POST': '5432',
     }
 }
 
@@ -116,13 +129,12 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
-
-STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATIC_URL = '/static/'
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# Activate Django_heroku.
+django_heroku.settings(locals())
+MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
