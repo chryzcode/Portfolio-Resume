@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-jenl02pv6nk$oaj^(0%v3v_7e(3^^kg2*s9pqbyiw+c9g2)l5='
+SECRET_KEY = 'maqlrzpk6tkd0=%eto&m%f@ic(m(i@pg^1g9&@9^3nu#puw8k^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -76,24 +76,24 @@ WSGI_APPLICATION = 'my_resume_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd6do4qo1tg5j15',
-        'USER': 'skvhlusigkvzax',
-        'PASSWORD': '4f008981f42ff2ac048581e45ffa5039ca1a20d22c7fe87071b628424d6f1d61',
-        'HOST': 'ec2-52-203-74-38.compute-1.amazonaws.com',
-        'POST': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'd6do4qo1tg5j15',
+#         'USER': 'skvhlusigkvzax',
+#         'PASSWORD': '4f008981f42ff2ac048581e45ffa5039ca1a20d22c7fe87071b628424d6f1d61',
+#         'HOST': 'ec2-52-203-74-38.compute-1.amazonaws.com',
+#         'POST': '5432',
+#     }
+# }
 
 
 # Password validation
