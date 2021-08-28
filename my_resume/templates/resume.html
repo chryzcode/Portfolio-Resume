@@ -5,38 +5,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
     <title>HNG Internship Task | Resume-Porfolio Form</title>
+    <style>
+       @media all and (max-width: 480px) {
+            #contact{
+                margin-left: 0 !important;
+                display: block;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            #profile{
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media all and (max-width: 325px) {
+            #content{
+                margin-left: 0 !important;
+            }       
+        }
+
+        @media all and (max-width: 275px) {
+            #skills{
+                margin-top: 0 !important;
+            }       
+        }
+
+
+        @media all and (max-width: 236px) {
+            #contact{
+                margin-left: 0 !important;
+                display: block;
+                text-align: left;
+                margin-bottom: 10px;
+                font-size: small;
+            }
+
+            #profile{
+                text-align: left;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div style="margin-top: 25px;" class="container">
             <div class="row">
-                <div class="col">
+                <div id="profile" class="col">
                     <h2 style="display: inline-block;">Olanrewaju Alaba</h2>
-                    <h5>Backend Intern <a href="https://twitter.com/hnginternship">@HNG</a></h5>
-                    <img style="width: 40px;" src="https://avatars.githubusercontent.com/u/55231433?s=200&v=4" alt="">
-                    <h4 style="margin-top: 50px;">About Me</h4>
-                <div>
-                    I am a full-stack developer, started my journey from being a backend developer before
-                    becoming a full-stack developer. I have built and still building
-                    backend, frontend and full-stack web apps and projects.
-                    The skills I use to solve problems and build experience includes
-                    Bootstrap, Python, Django Rest Framework Django SQLite,
-                    HTML and CSS.
+                    <h5>Backend Intern <a href="https://twitter.com/hnginternship">@HNG</a>  <img style="width: 20px; display: inline" src="https://avatars.githubusercontent.com/u/55231433?s=200&v=4" alt=""></h5>
+                   
                 </div>
-                
-                <h4 style="margin-top: 25px;">What I Do</h4>
-                <ul>
-                    <li>Opensource Building</li>
-                    <li>Frontend and Backend Projects Building</li>
-                    <li>Content creator</li>
-                </ul>
-                </div>
-            <div style="padding-left: 100px;" class="col">
-                    <p style="margin-bottom: 0;">+2349036449958</p>
-                    <p style="margin-bottom: 0;">alabaolanrewaju13@gmail.com</p>
+                <div id="contact" style="margin-left: 15%;" class="col">
+                    <p style="margin-bottom: 0;">+234 903 6449 958</p>
+                    <p style="margin-bottom: 0;"><a href="mailto:  alabaolanrewaju13@gmail.com"> alabaolanrewaju13@gmail.com</a></p>
                     <p style="margin-bottom: 0;">Lagos, Nigeria</p>
-                <h4 style="margin-top: 50px;">Skills</h4>
+                </div>
+            </div>
+            
+
+            <div class="row">
+                <div class="col">
+                    <h4 style="margin-top: 50px;">About Me</h4>
+                        <div>
+                            I am a full-stack developer, started my journey from being a backend developer before
+                            becoming a full-stack developer. I have built and still building
+                            backend, frontend and full-stack web apps and projects.
+                            The skills I use to solve problems and build experience includes
+                            Bootstrap, Python, Django Rest Framework Django SQLite,
+                            HTML and CSS.
+                        </div>
+                
+                    <h4 style="margin-top: 25px;">What I Do</h4>
+                    <ul>
+                        <li>Opensource Building</li>
+                        <li>Frontend and Backend Projects Building</li>
+                        <li>Content creator</li>
+                    </ul>
+                </div>
+
+
+            <div id="content" style="margin-left: 15%;" class="col">
+
+                <h4 id="skills" style="margin-top: 50px;">Skills</h4>
                 <ul>
                     <li>HTML</li>
                     <li>CSS</li>
@@ -50,25 +103,24 @@
                 </ul>
 
                 <h4 style="margin-top: 25px;">Projects</h4>
-                <ul>
-                    <li>Inventory Web-App</li>
-                    <li>Chryz-Hub Blogs</li>
-                    <li>Python Projects</li>
-                    <li>Frontend Projects</li>
-                    <li>Twitter Friends ApIs</li>
-                </ul>
+                    <ul>
+                        <li>Inventory Web-App</li>
+                        <li>Chryz-Hub Blogs</li>
+                        <li>Python Projects</li>
+                        <li>Frontend Projects</li>
+                        <li>Twitter Friends ApIs</li>
+                    </ul>
             </div>
-            </div>
-    </div>
+        </div>
  
     <div class="container">
         <div class="form-group">
             <form  method="POST">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button class="btn btn-primary" type="submit">Post</button>
+                <button style="margin-bottom: 30px;" class="btn btn-primary" type="submit">Post</button>
             </form>
-            </div> 
+        </div> 
     </div>
 </body>
 </html>
